@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
-const layouts = require("express-ejs-layouts");
+//const cookieParser = require("cookie-parser");
+//const layouts = require("express-ejs-layouts");
 const MongoStore = require('connect-mongodb-session')(session)
 
 const app = express();
@@ -9,15 +9,15 @@ const app = express();
 const port = 8000;
 const db = require("./config/mongoose");
 
-app.use(cookieParser());
+//app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("./assets"));
-app.set("layout extractStyle", true); // Remove the space after "extractStyle"
-app.set("layout extractScripts", true); // Remove the space after "extractScripts"
-app.use(layouts);
+//app.use(express.static("./assets"));
+//app.set("layout extractStyle", true); // Remove the space after "extractStyle"
+//app.set("layout extractScripts", true); // Remove the space after "extractScripts"
+//app.use(layouts);
 
-app.set("view engine", "ejs");
-app.set("views", "./views");
+//app.set("view engine", "ejs");
+//app.set("views", "./views");
 
 app.use("/", require("./routes/index"));
 

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 //const AVATAR_PATH = path.join("uploads/users/avatars");
 
-const patientSchema = new mongoose.Schema(
+const doctorSchema = new mongoose.Schema(
   {
     userName:{
         type:String,
@@ -23,6 +23,6 @@ const patientSchema = new mongoose.Schema(
 
 
 
-const Patient = mongoose.model("Patient", patientSchema);
+const Doctor = mongoose.model("Doctor", doctorSchema);
 
-module.exports = Patient;
+module.exports = Doctor;
