@@ -13,3 +13,5 @@
 # npm install 
 # npm install mongoose ===> Mongoose is a popular object data modeling (ODM) library for Node.js and MongoDB.
 # npm install cookie-parser
+# npm install passport-jwt ===>
+# npm install passport ===>
