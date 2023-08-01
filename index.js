@@ -11,6 +11,7 @@ const db = require("./config/mongoose");
 
 //app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+const passport = require('passport');
 const passportJwt = require("./config/passport_jwt");
 //app.use(express.static("./assets"));
 //app.set("layout extractStyle", true); // Remove the space after "extractStyle"
