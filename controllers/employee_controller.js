@@ -1,4 +1,4 @@
-const Employee = require("../models/Employee");
+const Employee = require("../models/Patient");
 
 module.exports.register = async function (req, res) {
   try {

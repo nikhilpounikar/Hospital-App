@@ -1,4 +1,4 @@
-# Emplyee_Review_APP
+# Hospital App
 
 # npm init ==> initialise packge.json
 # npm install express ==> install express and node module folder

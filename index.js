@@ -23,7 +23,7 @@ app.use("/", require("./routes/index"));
 
 app.use(
   session({
-    name: "Employee Review",
+    name: "Hospital App",
     secret: "monogConnection",
     saveUninitialized: false,
     resave: false,
