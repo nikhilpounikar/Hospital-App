@@ -19,7 +19,7 @@ module.exports.register = async function (req, res) {
       return res.status(200).json({
         message: "Session Created.",
         data: {
-          token: jwt.sign(doctor.toJSON(), "secret", { expiresIn: "100000" }),
+          token: jwt.sign(doctor.toJSON(), "hospital_key", { expiresIn: "100000" }),
         },
       });
     } else {
@@ -44,7 +44,7 @@ module.exports.login = async function (req, res) {
         return res.status(200).json({
           message: "Session Created.",
           data: {
-            token: jwt.sign(doctor.toJSON(), "secret", { expiresIn: "100000" }),
+            token: jwt.sign(doctor.toJSON(), "hospital_key", { expiresIn: "100000" }),
           },
         });
       } else {
