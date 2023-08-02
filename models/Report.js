@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 
 const reportSchema = new mongoose.Schema(
   {
-    createdBy:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Doctor"
-    },
-    Status: {
+    // createdBy:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Doctor"
+    // },
+    status: {
       type: String,
       enum:['Negative','Travelled-Quarantine','Symptoms-Quarantine','Positive-Admit'],
       require: true,
@@ -18,10 +18,10 @@ const reportSchema = new mongoose.Schema(
         ref: "Patient",
       },
     
-    date:{
-        type:Date,
-        require:true
-    }
+    // date:{
+    //     type:Date,
+    //     require:true
+    // }
   },
   {
     timestamps: true,

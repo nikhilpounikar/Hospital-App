@@ -1,11 +1,9 @@
 const Doctor = require("../models/Doctor");
-const jwt = require("jsonwebtoken");
 const Patient = require("../models/Patient");
-const Report = require('../models/Report');
+const Report = require("../models/Report");
 
 module.exports.register = async function (req, res) {
   try {
-
     if (req.body.phoneNumber === undefined || req.body.phoneNumber === "") {
       return res.status(422).json({
         message: "Please Enter Phone Number",
@@ -13,28 +11,20 @@ module.exports.register = async function (req, res) {
     }
 
     if (req.body.name === undefined || req.body.name === "") {
-        return res.status(422).json({
-          message: "Please Enter Name",
-        });
-    }
-
-    let doctor = await Doctor.findById(req.params.id);
-
-    if (!doctor) {
-      // here jwt should be return
-      return res.status(401).send("UnAuthorised");
-    } else {
-
-      let patient = await Patient.findOne({phoneNumber:req.body.phoneNumber});
-
-      if(!patient){
-        patient = await Patient.create(req.body);
-      }
-
-      return res.status(200).json({
-        patient : patient.toJSON()
+      return res.status(422).json({
+        message: "Please Enter Name",
       });
     }
+
+    let patient = await Patient.findOne({ phoneNumber: req.body.phoneNumber });
+
+    if (!patient) {
+      patient = await Patient.create(req.body);
+    }
+
+    return res.status(200).json({
+      patient: patient.toJSON(),
+    });
   } catch (err) {
     console.log(err);
     return res.status(500).json({
@@ -45,22 +35,51 @@ module.exports.register = async function (req, res) {
 
 module.exports.createReport = async function (req, res) {
   try {
-    console.log("creating report");
+    let patient = await Patient.findById(req.params.id);
+
+    if (!patient) {
+      return res.status(422).json({
+        message: "Patient Not Found",
+      });
+    }
+
+    let report = req.body;
+    report.date = new Date();
+    report = await Report.create(report);
+
+    if (report) {
+      patient.reports.push(report.id);
+      patient.save();
+    }
+
+    return res.status(200).json(report);
   } catch (err) {
     console.log(err);
     return res.status(500).json({
-      message: "Error Registering Doctor",
+      message: "Error Creating Report",
     });
   }
 };
 
 module.exports.getReports = async function (req, res) {
   try {
-    console.log("fetching reports");
+    let patient = await Patient.findById(req.params.id);
+
+    if (!patient) {
+      return res.status(422).json({
+        message: "Patient Not Found",
+      });
+    }
+ 
+    let reportIds = patient.reports;
+    console.log(reportIds);
+    let reports = await Report.findById(reportIds);
+
+    return res.status(200).json(reports);
   } catch (err) {
     console.log(err);
     return res.status(500).json({
-      message: "Error Registering Doctor",
+      message: "Error Getting Reports",
     });
   }
 };
