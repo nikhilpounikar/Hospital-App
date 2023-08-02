@@ -8,6 +8,7 @@ console.log("Router loaded");
 
 router.use('/doctor',require('./doctor_route'));
 router.use('/patients',require('./patient_route'));
+router.use('/reports',require('./reports_route'));
 //router.get('/employee',require('./employee_route'));
 //router.post("/update/:id", passport.checkAuthentication, userController.update);
 module.exports = router;
