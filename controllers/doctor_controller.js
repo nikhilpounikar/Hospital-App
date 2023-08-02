@@ -3,16 +3,16 @@ const jwt = require("jsonwebtoken");
 
 module.exports.register = async function (req, res) {
   try {
-    if (req.body.password !== req.body.confirm_password) {
+    if (req.body.password !== req.body.confirmPassword) {
       return res.status(422).json({
         message: "Password and Confirm password does not match",
       });
     }
-
+    console.log(req.body);
     let doctor = await Doctor.findOne({ userName: req.body.userName });
 
     if (!doctor) {
-      await Doctor.create(req.body);
+      doctor = await Doctor.create(req.body);
 
       console.log("Doctor Added Successfully");
       // here jwt should be return
@@ -28,6 +28,7 @@ module.exports.register = async function (req, res) {
       });
     }
   } catch (err) {
+    console.log(err);
     return res.status(500).json({
       message: "Error Registering Doctor",
     });

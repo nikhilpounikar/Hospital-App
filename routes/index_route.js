@@ -6,7 +6,8 @@ const router = express.Router();
 
 console.log("Router loaded");
 
-router.get('/doctor',require('./doctor_route'));
+router.use('/doctor',require('./doctor_route'));
+router.use('/patient',require('./patient_route'));
 //router.get('/employee',require('./employee_route'));
-router.post("/update/:id", passport.checkAuthentication, userController.update);
+//router.post("/update/:id", passport.checkAuthentication, userController.update);
 module.exports = router;

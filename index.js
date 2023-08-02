@@ -1,27 +1,22 @@
+const cookieParser = require("cookie-parser");
 const express = require("express");
-const session = require("express-session");
-//const cookieParser = require("cookie-parser");
-//const layouts = require("express-ejs-layouts");
-const MongoStore = require('connect-mongodb-session')(session)
 
 const app = express();
 
 const port = 8000;
 const db = require("./config/mongoose");
 
-//app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
+const session = require("express-session");
 const passport = require('passport');
 const passportJwt = require("./config/passport_jwt");
-//app.use(express.static("./assets"));
-//app.set("layout extractStyle", true); // Remove the space after "extractStyle"
-//app.set("layout extractScripts", true); // Remove the space after "extractScripts"
-//app.use(layouts);
+//const layouts = require("express-ejs-layouts");
+const MongoStore = require('connect-mongodb-session')(session)
 
-//app.set("view engine", "ejs");
-//app.set("views", "./views");
 
-app.use("/", require("./routes/index_route"));
+
+
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(
   session({
@@ -43,6 +38,19 @@ app.use(
     ),
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//app.use(express.static("./assets"));
+//app.set("layout extractStyle", true); // Remove the space after "extractStyle"
+//app.set("layout extractScripts", true); // Remove the space after "extractScripts"
+//app.use(layouts);
+
+//app.set("view engine", "ejs");
+//app.set("views", "./views");
+
+app.use("/", require("./routes/index_route"));
 
 app.listen(port, function (err) {
   if (err) {
