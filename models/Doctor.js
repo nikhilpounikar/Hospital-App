@@ -1,28 +1,29 @@
+// Import the required mongoose module
 const mongoose = require("mongoose");
-//const AVATAR_PATH = path.join("uploads/users/avatars");
 
+// Define the doctorSchema for the Doctor model
 const doctorSchema = new mongoose.Schema(
   {
-    userName:{
-        type:String,
-        require:true
+    userName: {
+      type: String,
+      required: true, // Username is a required field
     },
-    password:{
-        type:String,
-        require:true
+    password: {
+      type: String,
+      required: true, // Password is a required field
     },
     name: {
       type: String,
-      require: true,
-    }
+      required: true, // Name is a required field
+    },
   },
   {
-    timestamps: true,
+    timestamps: true, // Adds createdAt and updatedAt fields to the document
   }
 );
 
-
-
+// Create the Doctor model using the doctorSchema
 const Doctor = mongoose.model("Doctor", doctorSchema);
 
+// Export the Doctor model to be used in other parts of the application
 module.exports = Doctor;

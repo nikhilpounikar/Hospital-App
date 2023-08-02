@@ -1,35 +1,28 @@
+// Import the required mongoose module
 const mongoose = require("mongoose");
-//const AVATAR_PATH = path.join("uploads/users/avatars");
 
+// Define the reportSchema for the Report model
 const reportSchema = new mongoose.Schema(
   {
-    // createdBy:{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Doctor"
-    // },
+   
     status: {
       type: String,
-      enum:['Negative','Travelled-Quarantine','Symptoms-Quarantine','Positive-Admit'],
-      require: true,
+      enum: ['Negative', 'Travelled-Quarantine', 'Symptoms-Quarantine', 'Positive-Admit'], // Status field can only have values from this enum
+      required: true, // Status is a required field
     },
-    patient: 
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Patient",
-      },
-    
-    // date:{
-    //     type:Date,
-    //     require:true
-    // }
+    patient: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Patient", // This creates a reference to the "Patient" model for the "patient" field
+    },
+   
   },
   {
-    timestamps: true,
+    timestamps: true, // Adds createdAt and updatedAt fields to the document
   }
 );
 
-
-
+// Create the Report model using the reportSchema
 const Report = mongoose.model("Report", reportSchema);
 
+// Export the Report model to be used in other parts of the application
 module.exports = Report;
