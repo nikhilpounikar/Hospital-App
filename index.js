@@ -21,7 +21,7 @@ const passportJwt = require("./config/passport_jwt");
 //app.set("view engine", "ejs");
 //app.set("views", "./views");
 
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes/index_route"));
 
 app.use(
   session({
