@@ -25,6 +25,7 @@ module.exports.register = async function (req, res) {
       return res.status(200).json({
         message: "Session Created.",
         data: {
+          doctor,
           token: jwt.sign(doctor.toJSON(), "hospital_key", { expiresIn: "1000000" }), // Sign the JWT with a secret key and set an expiry time
         },
       });
@@ -55,6 +56,7 @@ module.exports.login = async function (req, res) {
         return res.status(200).json({
           message: "Session Created.",
           data: {
+            doctor,
             token: jwt.sign(doctor.toJSON(), "hospital_key", { expiresIn: "1000000" }), // Sign the JWT with a secret key and set an expiry time
           },
         });

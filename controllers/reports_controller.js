@@ -15,6 +15,8 @@ module.exports.getReportsByStatus = async function (req, res) {
     // Find reports with the specified status and populate the "patient" field with patient data
     let response = await Report.find({ status: req.params.status }).populate(
       "patient"
+    ).populate(
+      "createdBy"
     );
 
     // Return the found reports data in the response

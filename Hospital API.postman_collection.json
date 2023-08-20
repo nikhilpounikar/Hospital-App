@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "68b01775-daaf-4a03-8e3c-2c4555887e10",
+		"name": "Hospital API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29230012"
+	},
+	"item": [
+		{
+			"name": "Register Doctor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "doc2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1111",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "1111",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Doc 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}/doctor/register",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"doctor",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Doctor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "doc1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1111",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "1111",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Doc 1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}/doctor/login",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"doctor",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Patient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phoneNumber",
+							"value": "9804878578",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Patient 1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}/patients/register",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"patients",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient-create report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "Positive-Admit",
+							"type": "text"
+						},
+						{
+							"key": "patient",
+							"value": "{{patient_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}/patients/{{patient_id}}/create_report",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"patients",
+						"{{patient_id}}",
+						"create_report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient-all report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCALHOST}}/patients/64e1b7c6b0387fdd91b47395/all_reports",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"patients",
+						"64e1b7c6b0387fdd91b47395",
+						"all_reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report By Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCALHOST}}/reports/Negative",
+					"host": [
+						"{{LOCALHOST}}"
+					],
+					"path": [
+						"reports",
+						"Negative"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

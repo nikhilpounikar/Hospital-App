@@ -87,7 +87,7 @@ module.exports.getReports = async function (req, res) {
     let reportIds = patient.reports; // Get the array of report IDs from the patient's reports field
 
     // Find all reports with IDs in the reportIds array
-    let reports = await Report.find({_id:{'$in':reportIds}});
+    let reports = await Report.find({_id:{'$in':reportIds}}).populate('createdBy');
 
     return res.status(200).json(reports); // Return the found reports data in the response
   } catch (err) {

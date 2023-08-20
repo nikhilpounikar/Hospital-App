@@ -14,6 +14,10 @@ const reportSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Patient", // This creates a reference to the "Patient" model for the "patient" field
     },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Doctor", // This creates a reference to the "Patient" model for the "patient" field
+    },
    
   },
   {
