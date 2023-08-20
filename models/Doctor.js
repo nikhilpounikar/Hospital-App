@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // Define the doctorSchema for the Doctor model
 const doctorSchema = new mongoose.Schema(
   {
-    userName: {
+    email: {
       type: String,
       required: true, // Username is a required field
     },

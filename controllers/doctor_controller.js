@@ -13,7 +13,7 @@ module.exports.register = async function (req, res) {
     }
 
     // Check if a doctor with the same username already exists
-    let doctor = await Doctor.findOne({ userName: req.body.userName });
+    let doctor = await Doctor.findOne({ email: req.body.email });
 
     if (!doctor) {
       // If the doctor does not exist, create a new one
@@ -45,7 +45,7 @@ module.exports.register = async function (req, res) {
 module.exports.login = async function (req, res) {
   try {
     // Find the doctor based on the provided username
-    let doctor = await Doctor.findOne({ userName: req.body.userName });
+    let doctor = await Doctor.findOne({ email: req.body.email });
 
     if (doctor) {
       // If the doctor is found, check if the password matches
