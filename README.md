@@ -13,3 +13,57 @@
 # npm install passport-jwt ===> to jwt strategy
 # npm install passport ===> to authentication user 
 # npm install jsonwebtoken ===>
+
+
+### Description
+
+The full-stack application you're envisioning is designed to facilitate authorized doctors' interactions with patient data, health reports, and tracking over time. The application will consist of backend components, allowing doctors to securely log in, manage patient information, view health reports, and monitor patient health trends.
+
+
+### Tech Stack
+
+Node , Express, Mongodb 
+
+### How to setup the project on local system
+
+  1. Clone this project
+  2. Start by installing npm if you don't have it already.
+  3. Navigate to Project Directory.
+
+After reaching the project directory you have to run the following the command.
+   ```` 
+        npm install 
+        npm start || nodemon index.js
+   ````
+
+ 
+
+### Folder Structure
+
+```
+HOSPITAL App
+    |
+    |--->config---->|--->mongoose.js
+    |               |--->passport-local.js
+    |
+    |                  |-->doctor_controller.js
+    |--->controllers-->|-->patient_controller.js
+    |                  |-->reports_controller.js
+    |         
+    |
+    |               |-->Doctor.js
+    |--->models---->|-->Patient.js
+    |               |-->Report.js
+    |
+    |              
+    |               |-->doctor_route.js
+    |--->routes---->|-->index_route.js
+    |               |-->patient_route.js
+    |               |-->report_route.js
+    |
+    |-->node_modules
+    |--> index.js
+    |--> package-lock.json
+    |-->package.json
+    
+    ````

@@ -12,8 +12,6 @@ module.exports.register = async function (req, res) {
       });
     }
 
-    console.log(req.body);
-
     // Check if a doctor with the same username already exists
     let doctor = await Doctor.findOne({ userName: req.body.userName });
 
