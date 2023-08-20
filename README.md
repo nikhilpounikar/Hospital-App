@@ -67,3 +67,11 @@ HOSPITAL App
     |-->package.json
     
     ````
+# Postman Collection (Hospital).json
+
+this is postman collection please import this file in postman and create two globla variabls say LOCALHOST, patient_id and doctor_id make use of these variable to 
+use apis.
+
+LOCALHOST ---> this defines the server 
+patient_id ---> variable for patient_id after creation of patient.
+doctor_id  ---> for doctor document id reference

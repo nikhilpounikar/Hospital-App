@@ -16,7 +16,7 @@
 					"urlencoded": [
 						{
 							"key": "email",
-							"value": "doc2@gmail.com",
+							"value": "doc4@gmail.com",
 							"type": "text"
 						},
 						{
@@ -31,7 +31,7 @@
 						},
 						{
 							"key": "name",
-							"value": "Doc 2",
+							"value": "Doc 4",
 							"type": "text"
 						}
 					]
@@ -62,25 +62,13 @@
 					"urlencoded": [
 						{
 							"key": "email",
-							"value": "doc1@gmail.com",
+							"value": "doc2@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "1111",
 							"type": "text"
-						},
-						{
-							"key": "confirmPassword",
-							"value": "1111",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "name",
-							"value": "Doc 1",
-							"type": "text",
-							"disabled": true
 						}
 					]
 				},
@@ -105,7 +93,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUyMTA1NDc1ZmZmMTBjYjg1YWM0Y2YiLCJlbWFpbCI6ImRvYzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAyIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwiX192IjowLCJpYXQiOjE2OTI1Mzk4MjgsImV4cCI6MTY5MjU0MDgyOH0.ND0XbKqFrIGiZmVxO6ChO-1wFo3rKJ7Bej71RWzMAnc",
 							"type": "string"
 						}
 					]
@@ -117,12 +105,12 @@
 					"urlencoded": [
 						{
 							"key": "phoneNumber",
-							"value": "9804878578",
+							"value": "9503289091",
 							"type": "text"
 						},
 						{
 							"key": "name",
-							"value": "Patient 1",
+							"value": "Patient 3",
 							"type": "text"
 						}
 					]
@@ -148,7 +136,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUyMTA1NDc1ZmZmMTBjYjg1YWM0Y2YiLCJlbWFpbCI6ImRvYzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAyIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwiX192IjowLCJpYXQiOjE2OTI1Mzk1OTQsImV4cCI6MTY5MjU0MDU5NH0.UW1ccyHThP7QY6G5Fb_GdLQBDZXVGJtfEBvikg5VRls",
 							"type": "string"
 						}
 					]
@@ -160,12 +148,17 @@
 					"urlencoded": [
 						{
 							"key": "status",
-							"value": "Positive-Admit",
+							"value": "Travelled-Quarantine",
 							"type": "text"
 						},
 						{
 							"key": "patient",
 							"value": "{{patient_id}}",
+							"type": "text"
+						},
+						{
+							"key": "createdBy",
+							"value": "{{doctor_id}}",
 							"type": "text"
 						}
 					]
@@ -192,7 +185,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUyMTA1NDc1ZmZmMTBjYjg1YWM0Y2YiLCJlbWFpbCI6ImRvYzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAyIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwiX192IjowLCJpYXQiOjE2OTI1Mzk1OTQsImV4cCI6MTY5MjU0MDU5NH0.UW1ccyHThP7QY6G5Fb_GdLQBDZXVGJtfEBvikg5VRls",
 							"type": "string"
 						}
 					]
@@ -200,13 +193,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LOCALHOST}}/patients/64e1b7c6b0387fdd91b47395/all_reports",
+					"raw": "{{LOCALHOST}}/patients/{{patient_id}}/all_reports",
 					"host": [
 						"{{LOCALHOST}}"
 					],
 					"path": [
 						"patients",
-						"64e1b7c6b0387fdd91b47395",
+						"{{patient_id}}",
 						"all_reports"
 					]
 				}
@@ -221,7 +214,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUxYjY4YWIwMzg3ZmRkOTFiNDczOTAiLCJlbWFpbCI6ImRvYzFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAxIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQwNjo0NTozMC45NTFaIiwiX192IjowLCJpYXQiOjE2OTI1MTQwMzQsImV4cCI6MTY5MjUxNTAzNH0.7559u3sJI60I3Z_fFLPUJLyFLXJtm82u88Fi_JKCUMA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUyMTA1NDc1ZmZmMTBjYjg1YWM0Y2YiLCJlbWFpbCI6ImRvYzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMTExIiwibmFtZSI6IkRvYyAyIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQxMzowODozNy4wMTlaIiwiX192IjowLCJpYXQiOjE2OTI1Mzk4MjgsImV4cCI6MTY5MjU0MDgyOH0.ND0XbKqFrIGiZmVxO6ChO-1wFo3rKJ7Bej71RWzMAnc",
 							"type": "string"
 						}
 					]
