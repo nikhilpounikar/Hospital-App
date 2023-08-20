@@ -88,7 +88,7 @@ module.exports.getReports = async function (req, res) {
     console.log(reportIds);
 
     // Find all reports with IDs in the reportIds array
-    let reports = await Report.findById(reportIds);
+    let reports = await Report.find({_id:{'$in':reportIds}});
 
     return res.status(200).json(reports); // Return the found reports data in the response
   } catch (err) {
