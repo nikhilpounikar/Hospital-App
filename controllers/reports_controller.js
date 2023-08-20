@@ -17,8 +17,6 @@ module.exports.getReportsByStatus = async function (req, res) {
       "patient"
     );
 
-    console.log(response);
-
     // Return the found reports data in the response
     return res.status(200).json({
       response,
