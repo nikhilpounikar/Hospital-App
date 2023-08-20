@@ -12,7 +12,7 @@ module.exports.getReportsByStatus = async function (req, res) {
       });
     }
 
-    // Find reports with the specified status and populate the "patient" field with patient data
+    // Find reports with the specified status and populate the "patient" field with patient data and createdBy field.
     let response = await Report.find({ status: req.params.status }).populate(
       "patient"
     ).populate(
