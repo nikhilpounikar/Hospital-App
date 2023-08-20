@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //const env = require('./environment');
 
 //connect to the database
-mongoose.connect('mongodb://localhost:27017/hospital_app');
+mongoose.connect('mongodb+srv://whiteWolff:praduman@cluster0.an8uy3k.mongodb.net/hospital_app_db?retryWrites=true&w=majority');
 
 //acquire the connection(to check if it's successful)
 const db = mongoose.connection;
