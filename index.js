@@ -11,8 +11,8 @@ const db = require("./config/mongoose");
 const session = require("express-session");
 const passport = require('passport');
 const passportJwt = require("./config/passport_jwt");
-const MongoStore = require('connect-mongodb-session')(session)
-
+// const MongoStore = require('connect-mongodb-session')(session)
+const MongoStore = require('connect-mongo');
 // Use the cookie-parser middleware to parse cookies from the request
 app.use(cookieParser());
 // Use the express.urlencoded middleware to parse incoming request bodies with URL-encoded payloads
@@ -28,15 +28,25 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 100, // The maximum age (in milliseconds) of the session cookie
     },
-    store: new MongoStore(
-      {
-        mongooseConnection: db.connection, // MongoDB connection to use for session store
-        autoRemove: "disable", // Disable automatic removal of expired sessions
-      },
-      function (err) {
-        console.log(err || "connect-mongodb setup ok");
+    // store: new MongoStore(
+    //   {
+    //     mongooseConnection: db.connection, // MongoDB connection to use for session store
+    //     autoRemove: "disable", // Disable automatic removal of expired sessions
+    //   },
+    //   function (err) {
+    //     console.log(err || "connect-mongodb setup ok");
+    //   }
+    // ),
+
+    store: MongoStore.create({
+      // mongoUrl: 'mongodb+srv://nikhilpounikar:1IWKLK3KdLBb2X9U@cluster0.sbronh6.mongodb.net/employee_review_db?retryWrites=true&w=majority',
+      mongoUrl: 'mongodb+srv://whiteWolff:praduman@cluster0.an8uy3k.mongodb.net/employee_review_db?retryWrites=true&w=majority',
+      autoRemove: 'disabled'
+  },
+      (err) => {
+          console.log(err || 'connect-mongo setup ok');
       }
-    ),
+  )
   })
 );
 

@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 
 // Function to register a new doctor
 module.exports.register = async function (req, res) {
+  console.log('function callled');
   try {
     // Check if the password and confirmPassword match
     if (req.body.password !== req.body.confirmPassword) {
